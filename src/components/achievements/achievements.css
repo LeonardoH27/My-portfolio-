@@ -1,0 +1,75 @@
+.achievements__section {
+  text-align: center;
+  align-items: center;
+}
+.achievements__container {
+  grid-template-rows: repeat (auto-fit, minmax(1, 2fr));
+}
+.achievements__description {
+  padding: 0 16px 0 0;
+  margin-bottom: var(--mb-2-5);
+  text-align: center;
+}
+
+.badges {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.badges__badge img {
+  max-width: 100%;
+  height: auto;
+}
+
+.badges__badge:hover {
+  transform: scale(1.1);
+}
+
+/* Applied for large devices */
+@media screen and (max-width: 992px) {
+  .about__container {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+
+  .about__img {
+    width: 450px;
+  }
+
+  .about__box {
+    padding: 12px 8px;
+  }
+
+  .about__data {
+    text-align: center;
+  }
+
+  .about__info {
+    justify-content: center;
+  }
+
+  .about__description {
+    padding: 0 80px;
+    margin-bottom: 32px;
+  }
+}
+
+/* Applied for mid-range devices */
+@media screen and (max-width: 576px) {
+  .about__info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about__description {
+    padding: 0;
+  }
+}
+
+/* Applied for small devices */
+@media screen and (max-width: 350px) {
+  .about__info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

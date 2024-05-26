@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@300;500;600&display=swap");
+
+/*.....variable css..... */
+:root {
+  --header-height: 48px;
+
+  /*.....colors.....*/
+  /*.....HSL(hue, saturation, lightness).....*/
+  --hue: 0;
+  --sat: 0%;
+  --text-color: hsl(var(--hue), var(--sat), 43%);
+  --title-color: hsl(var(--hue), var(--sat), 23%);
+  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
+  --body-color: hsl(var(--hue), var(--sat), 90%);
+  --container-color: #f5f5f5;
+  --container-color-main: #f04756;
+
+  /*.....font and typography..... */
+
+  --body-font: "Bitter", serif;
+
+  /*.....font size.....*/
+
+  --font-normal: 300;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  --big-font-size: 56px;
+  --h1-font-size: 37px;
+  --h2-font-size: 23px;
+  --h3-font-size: 19px;
+  --normal-font-size: 17px;
+  --small-font-size: 14px;
+  --smaller-font-size: 13px;
+  --tiny-font-size: 10px;
+
+  /*.....Index......*/
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+
+  /* .....bottom margin.....*/
+
+  --mb-0-25: 4px;
+  --mb-0-5: 8px;
+  --mb-0-75: 12px;
+  --mb-1: 16px;
+  --mb-1-5: 24px;
+  --mb-2: 32px;
+  --mb-2-5: 40px;
+  --mb-3: 48px;
+}
+
+/* .....Responsible Typography..... */
+@media screen and (max-width: 992px) {
+  :root {
+    --big-font-size: 44px;
+    --h1-font-size: 25px;
+    --h2-font-size: 19px;
+    --h3-font-size: 16px;
+    --normal-font-size: 15px;
+    --small-font-size: 13px;
+    --smaller-font-size: 12px;
+  }
+}
+
+/*.....Base.....*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*.....Reusable CSS Classes.....*/
+
+.section {
+  padding: 96px 0px 32px;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 64px;
+}
+
+.section__title {
+  color: var(--title-color);
+  font-size: var(--h1-font-size);
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+/*.....Buttons.....*/
+
+.button {
+  background-color: var(--title-color);
+  color: var(--container-color);
+  font-weight: var(--font-medium);
+  display: inline-block;
+  padding: 20px 32px;
+  border-radius: 16px;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.button__icon {
+  margin-left: var(--mb-0-5);
+}
+
+/*.....Layout.....*/
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.container {
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*......Breakpoints.....*/
+
+/*Applied for small devices */
+@media screen and (max-width: 350px) {
+  :root {
+    --big-font-size: 36px;
+  }
+
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+}
+
+/*Applied for mid-range devices*/
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0 0 var(--header-height) 0;
+  }
+
+  .section {
+    padding: 32px 0px 64px;
+  }
+
+  .section__subtitle {
+    margin-bottom: var(--mb-3);
+  }
+}
+
+@media screen and (max-width: 576px) {
+}
+
+/* Applied for large devices */
+@media screen and (max-width: 992px) {
+  .container {
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+
+  .button {
+    padding: 16px 28px;
+  }
+
+  .button__icon {
+    width: 22px;
+    height: 22px;
+  }
+}
